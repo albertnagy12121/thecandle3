@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>The Candle</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/logo.jpg" rel="icon" style="border-radius: 20px;">
+  <link href="assets/img/logo.jpg" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <script>
+    function formatMailto(event) {
+        var nume = document.querySelector('input[name="Nume"]').value.trim();
+        var email = document.querySelector('input[name="Email"]').value.trim();
+        var subiect = document.querySelector('input[name="Subiect"]').value.trim();
+        var mesaj = document.querySelector('textarea[name="Mesaj"]').value.trim();
+        if (!nume || !email || !subiect || !mesaj) {
+            alert("Every field is mandatory! Please fill them all before sending the message.");
+            event.preventDefault();
+            return false;
+        }
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+            alert("Please provide a valid email!");
+            event.preventDefault();
+            return false;
+        }
+        var mailtoLink = "mailto:thecandle43@gmail.com"
+            + "?subject=" + encodeURIComponent(subiect)
+            + "&body=" + encodeURIComponent("Name and adress: " + nume + "\nEmail: " + email + "\n\n" + "Message:"+ mesaj);
+        window.location.href = mailtoLink;
+    }
+    </script>
+    
+ 
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+
+      <img src="assets/img/logo.jpg" alt="" style="border-radius: 20px;"> 
+        <h1 class="sitename">The Candle</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li class="dropdown"><a href="#"><span>Other</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">How to order</a></li>
+              <li><a href="tos.html">Terms of Service</a></li>
+              <li><a href="rp.html">Return Policy</a></li>
+            </ul>
+          </li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/logo.jpg" alt="" class="hero-bg">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-4 order-lg-last hero-img" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/logo.jpg" class="img-fluid animated" alt="" style="border-radius: 30px;">
+          </div>
+
+          <div class="col-lg-6  d-flex flex-column justify-content-center" data-aos="fade-in">
+            <h1><span>~THE Candle~</span>🤍 is a small business where each candle is made individually, hand-poured with care and love  🤍</h1>
+            <div class="d-flex">
+              <a href="#about" class="btn-get-started">Get Started</a>
+              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-xl-center gy-5">
+
+          <div class="col-xl-5 content">
+            <h3>About Us</h3>
+            <h2>At THE Candle🤍, we believe that every candle should not only be beautiful but also safe for you and your home. That’s why we use 100% soy wax in every creation.  </h2>
+            <p>We believe in the beauty of slow, mindful creation—where high-quality ingredients meet artistic design to create candles that are not just decor but an experience. Whether you're looking for a cozy ambiance, a thoughtful gift, or a touch of luxury for your home, THE Candle🤍 offers timeless pieces that illuminate moments and memories.
+
+              Join us in celebrating the magic of handmade craftsmanship, one candle at a time. ✨🤍</p>
+          </div>
+
+          <div class="col-xl-7">
+            <div class="row gy-4 icon-boxes">
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="icon-box">
+                  <i class="bi bi-buildings"></i>
+                  <h3>💚 *Eco-Friendly & Sustainable*</h3>
+                  <p>Derived from *natural soybeans*, our candles are biodegradable, renewable, and free from toxic additives—an environmentally conscious choice for a more sustainable future.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="icon-box">
+                  <i class="bi bi-clipboard-pulse"></i>
+                  <h3>🌿 Clean & Healthy Burning</h3>
+                  <p>Unlike traditional paraffin candles, *soy wax burns clean, producing significantly less soot and harmful chemicals. This means better air quality in your home—especially important for those with **allergies, asthma, or sensitivities*.</p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="icon-box">
+                  <i class="bi bi-command"></i>
+                  <h3>✨ Better Scent Throw</h3>
+                  <p>Soy wax holds fragrance *beautifully and evenly*, providing a long-lasting and more natural scent experience, without overwhelming artificial notes. </p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="icon-box" style="margin-top: 20px;">
+                  <i class="bi bi-graph-up-arrow"></i>
+                  <h3>🕯 *Longer Burn Time*  
+                  </h3>
+                  <p>Soy wax burns *slower and cooler*, allowing you to enjoy your candle for a longer time while making the most of its warm, inviting glow.  </p>
+                </div>
+              </div> <!-- End Icon Box -->
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /About Section -->
+
+    
+
+    
+    <!-- Details Section -->
+    <section id="details" class="details section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Products</h2>
+        <div><span>Check Our</span> <span class="description-title">most wanted products</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <img src="assets/img/img1.jpg" class="img-fluid" alt="" style="border-radius: 40px;" height="60px">
+          </div>
+          <div class="col-md-7" data-aos="fade-up" data-aos-delay="100">
+            <h3>Golden Swirl Elegance.</h3>
+            <p class="fst-italic">
+              Is a beautifully sculpted candle featuring a delicate spiral design that mimics the graceful movement of a swirling breeze. Its creamy white finish, complemented by a golden bead at the wick’s base, adds a touch of opulence and refinement. This candle serves as both a stunning decor piece and a serene source of ambient light, perfect for creating a cozy, luxurious atmosphere. Whether used for relaxation, gifting, or home styling, Golden Swirl Elegance brings a sense of warmth and tranquility to any space.</p>
+            <ul>
+              <li><i class="bi bi-check"></i><span> Made with 100% soy wax.</span></li>
+              <li><i class="bi bi-check"></i> <span>Long-lasting flame.</span></li>
+              <li><i class="bi bi-check"></i> <span>It's safer for people who have allergies.</span></li>
+            </ul>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+            <img src="assets/img/img2.jpg" class="img-fluid" alt="" style="border-radius: 40px;">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up" data-aos-delay="200">
+            <h3>Blossom Glow </h3>
+            <p class="fst-italic">
+              is an intricately crafted floral candle, designed to resemble a delicate blooming flower. Its soft pink hue is accented with shimmering specks of glitter, adding a touch of enchantment and elegance. This beautifully detailed candle is perfect for those who appreciate artistic decor and want to create a serene, romantic atmosphere. Whether as a statement piece, a thoughtful gift, or a soothing addition to a relaxation ritual, Blossom Glow infuses any space with warmth, beauty, and charm.</p>
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 d-flex align-items-center" data-aos="zoom-out">
+            <img src="assets/img/img3.jpg" class="img-fluid" alt="" style="border-radius: 40px;">
+          </div>
+          <div class="col-md-7" data-aos="fade-up">
+            <h3>Eternal Embrace</h3>
+            <p>is a beautifully sculpted candle that symbolizes love, connection, and unity. Crafted in a soft ivory hue, this minimalist yet deeply expressive design captures the warmth and closeness of two souls intertwined. Perfect as a romantic gift, a wedding decor accent, or a sentimental keepsake, this candle brings an intimate and serene glow to any space. Whether celebrating love or cherishing memories, Eternal Embrace radiates timeless affection and warmth.</p>
+            
+          </div>
+        </div><!-- Features Item -->
+
+        <div class="row gy-4 align-items-center features-item">
+          <div class="col-md-5 order-1 order-md-2 d-flex align-items-center" data-aos="zoom-out">
+            <img src="assets/img/img4.jpg" class="img-fluid" alt="" style="border-radius: 40px;">
+          </div>
+          <div class="col-md-7 order-2 order-md-1" data-aos="fade-up">
+            <h3>Luminous Swirl</h3>
+            <p class="fst-italic">
+              Is a stunning handcrafted candle designed with an elegant spiral pattern that flows gracefully around its rounded shape. With a soft ivory finish and a smooth, sculptural aesthetic, this candle brings both warmth and sophistication to any space. Whether used as a statement decor piece, a relaxation companion, or a thoughtful gift, Luminous Swirl radiates a sense of serenity and timeless charm, making it a perfect addition to modern and minimalist interiors. </p>
+          </div>
+        </div><!-- Features Item -->
+
+      </div>
+
+    </section><!-- /Details Section -->
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Gallery</h2>
+        <div><span>Check Our</span> <span class="description-title">Gallery</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-0">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery-1.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/galleryphoto1.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery-2.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/galleryphoto2.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery-3.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/galleryphoto3.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery-4.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/galleryphoto4.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery-5.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/galleryphoto5.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery-6.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/galleryphoto6.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery-7.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/galleryphoto7.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+          <div class="col-lg-3 col-md-4">
+            <div class="gallery-item">
+              <a href="assets/img/gallery-8.jpg" class="glightbox" data-gallery="images-gallery">
+                <img src="assets/img/galleryphoto8.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div><!-- End Gallery Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Gallery Section -->
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section dark-background">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials.png" class="testimonial-img" alt="">
+                <h3>Sophie M</h3>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Absolutely in love with these candles! The craftsmanship is stunning, and the scent is just perfect—not too overpowering, just a soft and natural fragrance. Plus, knowing they are made with soy wax makes me feel good about burning them in my home. Will definitely be buying more!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials-2.jpg" class="testimonial-img" alt="">
+                <h3>Emily R.</h3>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>The attention to detail in these candles is incredible! I ordered the floral-shaped one, and it looks too beautiful to burn. When I finally lit it, it burned so cleanly and lasted for hours. Definitely the best handmade candles I’ve ever had!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials-3.jpg" class="testimonial-img" alt="">
+                <h3>Laura T.</h3>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>I bought one as a gift for my best friend, and she absolutely loved it! The packaging was gorgeous, and the little golden detail on the wick added such an elegant touch. It’s clear that a lot of love goes into making these. Highly recommend!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials.png" class="testimonial-img" alt="">
+                <h3>Megan D</h3>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>Finally, a candle that doesn’t give me a headache! I usually avoid scented candles because they can be too strong, but these are just perfect. They create a cozy ambiance, and the soy wax burns evenly with no nasty black smoke. I’m obsessed!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials.png" class="testimonial-img" alt="">
+                <h3>Charlotte B.</h3>
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                </div>
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>These candles are pure luxury! I love the minimalist yet elegant design, and they fit perfectly in my home decor. The fact that they’re eco-friendly and handmade makes them even better. Can’t wait to get more for my collection!</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+
+    </section><!-- /Testimonials Section -->
+
+    
+    <!-- Faq Section -->
+    <section id="faq" class="faq section light-background">
+
+      <div class="container-fluid">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center order-2 order-lg-1">
+
+            <div class="content px-xl-5" data-aos="fade-up" data-aos-delay="100">
+              <h3><span>Frequently Asked </span><strong>Questions</strong></h3>
+            
+            </div>
+
+            <div class="faq-container px-xl-5" data-aos="fade-up" data-aos-delay="200">
+
+              <div class="faq-item faq-active">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How can I place an order for a candle?</h3>
+                <div class="faq-content">
+                  <p>✅ To place an order, please *fill in the form at the bottom of the page, specifying the candle you wish to purchase. Since our products are **handmade and not kept in a fixed stock, you will receive an **email in the shortest time* confirming the *price and estimated delivery time*. We appreciate your patience and support for handcrafted products! 🤍✨  
+                  </p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>How should I care for my candle to make it last longer?</h3>
+                <div class="faq-content">
+                  <p>✅ To get the best burn from your candle:  
+                     *Trim the wick* to about *5mm (¼ inch)* before each use to prevent excess soot and uneven burning.  
+                     Allow the *first burn to create a full melt pool* (wax melted to the edges) to prevent tunneling.  
+                     Keep your candle away from drafts to ensure an even burn.  
+                     Never leave a burning candle unattended and always place it on a heat-resistant surface.  
+                    </p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+              <div class="faq-item">
+                <i class="faq-icon bi bi-question-circle"></i>
+                <h3>Are your candles safe for people with allergies or sensitivities?</h3>
+                <div class="faq-content">
+                  <p>✅ Yes! Our candles are made with *100% natural soy wax, which burns cleaner and emits **significantly fewer toxins* compared to paraffin candles. We also use *high-quality, non-toxic fragrance oils* to ensure a *gentle and safe* scent experience. However, if you have specific sensitivities, we recommend choosing our *unscented options* for the purest burn.  
+                  </p>
+                </div>
+                <i class="faq-toggle bi bi-chevron-right"></i>
+              </div><!-- End Faq item-->
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2">
+            <img src="assets/img/faq.jpg" class="img-fluid" alt="" data-aos="zoom-in" data-aos-delay="100">
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Faq Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <div><span>Check Our</span> <span class="description-title">Contact</span></div>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4">
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>A108 Adam Street, New York, NY 535022</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+44 7780 274389</p>
+              </div>
+            </div><!-- End Info Item -->
+
+            <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>thecandle43@gmail.com</p>
+              </div>
+            </div><!-- End Info Item -->
+
+          </div>
+
+          <div class="col-lg-8">
+            <form action="mailto:thecandle43@gmail.com" method="post" enctype="text/plain">
+              <div class="row">
+                  <div class="col-md-6 form-group">
+                      <input type="text" name="Nume" class="form-control" placeholder="Name and Address" required>
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                      <input type="email" class="form-control" name="Email" placeholder="Email" required>
+                  </div>
+              </div>
+              <div class="form-group mt-3">
+                  <input type="text" class="form-control" name="Subiect" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                  <textarea class="form-control" name="Mesaj" rows="5" placeholder="Message" required></textarea>
+              </div><br>
+              <div class="text-center">
+                  <button style="background:#b399be; border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 50px; margin-top:10px;" onclick="formatMailto(event)" type="submit" onclick="formatMailto()">Send Message</button>
+              </div>
+              <div class="text-center">
+                  <button style="background: #b399be; border: 0; padding: 10px 30px; color: #fff; transition: 0.4s; border-radius: 50px; margin-top:10px;" type="reset">Reset form</button>
+              </div>
+          </form>
+          
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">TheCandle</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>A108 Adam Street</p>
+            <p>New York, NY 535022</p>
+            <p class="mt-3"><strong>Phone:</strong> <span>+44 7780 274389</span></p>
+            <p><strong>Email:</strong> <span>thecandle43@gmail.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-whatsapp"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61569628016484"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/thecandle887?igsh=MW85cGh2ZHhoZ2thbQ=="><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="tos.html">Terms of service</a></li>
+            <li><a href="rp.html">Return policy</a></li>
+          </ul>
+        </div>
+
+       
+
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+         <img src="assets/img/logo.jpg" width="50%" style="text-align: center; border-radius: 30px;">
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+ <p><strong class="px-1 sitename">With *THE Candle🤍, you’re not just lighting a candle—you’re embracing **purity, sustainability, and a touch of handmade love.* 🤍✨</strong></p>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
